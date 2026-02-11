@@ -1,7 +1,7 @@
 # Thucydides Product Blueprint
 
 ## 1) Product Vision
-**Thucydides** is a mobile-first geopolitical strategy simulation designed to teach global affairs through realistic, consequence-driven decision-making.
+**Thucydides** is a web-based geopolitical strategy simulation designed to teach global affairs through realistic, consequence-driven decision-making.
 
 Players assume leadership of any recognized sovereign state and respond to fast-changing domestic and international events. Every decision updates military readiness, economic stability, social cohesion, diplomatic relationships, and long-term strategic outcomes.
 
@@ -67,6 +67,13 @@ Before integration, validate each source’s terms for reuse, redistribution, sc
 - licensed/permissioned data access, or
 - substitution with open/commercially permitted datasets.
 
+### Country Starting-Standings Baseline
+At game start, each country receives a baseline standing derived from normalized indicators across military capacity, economic resilience, demographics, and governance stability.
+
+- CIA World Factbook and Global Firepower are treated as **reference sources** for shaping the metric model during development.
+- The game does **not** require direct in-game republication of those sources to launch the experience.
+- Baseline metrics should be computed from legally approved, provenance-tracked inputs with the same schema so sources can be swapped without redesigning gameplay logic.
+
 ---
 
 ## 5) Data Model (v1)
@@ -131,12 +138,12 @@ Each non-player country should have:
 
 ---
 
-## 8) Mobile App Architecture (Recommended)
+## 8) Web App Architecture (Recommended)
 
-### Client
-- **Framework**: Flutter or React Native.
-- **Views**: map, dashboard, cabinet decisions, intelligence briefs, timeline replay.
-- **Offline mode**: read-only country profiles + queued decisions.
+### Frontend
+- **Framework**: Next.js (React + TypeScript) or Vue/Nuxt.
+- **Views**: world map, country dashboard, cabinet decisions, intelligence briefs, timeline replay.
+- **Session mode**: browser-first persistence with autosave and resumable sessions.
 
 ### Backend
 - **API**: GraphQL or REST.
@@ -171,7 +178,7 @@ Each non-player country should have:
 ### Phase 1: Foundations (Weeks 1-3)
 - Finalize legal/data sourcing constraints.
 - Implement country schema and ingest pipeline.
-- Build static country profile screens.
+- Build static web country profile screens with baseline starting-standings metrics.
 
 ### Phase 2: Core Simulation (Weeks 4-7)
 - Implement indicator engine and policy vectors.
@@ -186,7 +193,7 @@ Each non-player country should have:
 ### Phase 4: MVP Release Candidate (Weeks 11-13)
 - Add onboarding + tutorial.
 - Add save/load, replay timeline, debrief reports.
-- Conduct realism and educational QA tests.
+- Conduct realism and educational QA tests in desktop/mobile browsers.
 
 ---
 
@@ -194,7 +201,7 @@ Each non-player country should have:
 - **Data licensing risk** → legal review + pluggable data provider architecture.
 - **Overcomplexity risk** → progressive disclosure UX and adjustable realism modes.
 - **Perceived bias risk** → transparent model assumptions and source citations.
-- **Performance risk** → server-side simulation + mobile-optimized payloads.
+- **Performance risk** → server-side simulation + web-optimized payloads.
 
 ---
 

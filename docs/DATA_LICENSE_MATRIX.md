@@ -8,6 +8,11 @@ This matrix tracks legal/compliance constraints for external datasets considered
 > - **Blocked**: not permitted for current use.
 > - **Pending review**: not yet reviewed by legal.
 
+
+## Current development stance
+
+For the current web-app planning phase, CIA World Factbook and Global Firepower are used as **reference inputs for defining baseline country-standing metrics**, not as directly embedded in-game content. Production ingestion remains gated by the compliance workflow below.
+
 ## Source-by-source matrix
 
 | Source | Allowed uses | Attribution | Scraping / API rules | Commercial use | Sublicensing / redistribution | Current status | Notes / required actions |
