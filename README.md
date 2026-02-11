@@ -12,3 +12,5 @@ This repository now includes a full product blueprint for building a realistic m
 - Mobile architecture and MVP roadmap
 
 Read: [`docs/PRODUCT_BLUEPRINT.md`](docs/PRODUCT_BLUEPRINT.md)
+
+- Data licensing/compliance tracker: [`docs/DATA_LICENSE_MATRIX.md`](docs/DATA_LICENSE_MATRIX.md)
